@@ -17,4 +17,4 @@ WORKDIR /app
 COPY --from=build-env /go/src/github.com/probably-not/go-module-small/configs /app/configs
 COPY --from=build-env /go/src/github.com/probably-not/go-module-small /app/
 
-ENTRYPOINT ["./google-adexchangebuyer-exporter"]
+ENTRYPOINT ["./go-module-small"]
