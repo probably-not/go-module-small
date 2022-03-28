@@ -4,11 +4,11 @@ WORKDIR /go/src/github.com/probably-not/go-module-small
 COPY . .
 
 ## Get Dependencies
+COPY go.mod go.sum ./
 RUN go mod download && go get -d -v ./...
-## Test to ensure tests all pass
-RUN go test ./...
-## Compile
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags '-extldflags "-static"' -o go-module-small
+
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -tags netgo,osusergo -ldflags '-extldflags "-static"' -o go-module-small
 
 # final stage
 FROM gcr.io/distroless/static:latest
