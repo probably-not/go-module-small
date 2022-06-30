@@ -1,5 +1,5 @@
 # build stage
-FROM golang:1.17 AS build-env
+FROM golang:1.18 AS build-env
 WORKDIR /go/src/github.com/probably-not/go-module-small
 COPY . .
 
