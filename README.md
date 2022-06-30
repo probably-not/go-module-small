@@ -13,4 +13,11 @@ A template for a small and simple go module.
 The way to use this as a template is with the following steps:
 1. Replace all instances of github.com/probably-not/go-module-small with your module name
 2. Replace all instances of go-module-small with your repo name
-3. If you want to push the Dockerfile to your Docker Hub account, you need to adjust the [`push-docker`](.github/workflows/push-docker) file to have the `.yaml` file extension (it doesn't so as to not trigger this action unless necessary. Pushing to Docker Hub will also require setting the `DOCKER_HUB_USERNAME` and `DOCKER_HUB_ACCESS_TOKEN` secrets for your actions to use. See [this guide](https://docs.docker.com/ci-cd/github-actions/) for how to generate these values.
+
+## Pushing to Docker Hub
+
+If you want to push the Dockerfile to your Docker Hub account, you need to adjust the [`push-docker`](.github/workflows/push-docker) file to have the `.yaml` file extension (it doesn't so as to not trigger this action unless necessary.
+
+Pushing to Docker Hub will also require setting the `DOCKER_HUB_USERNAME` and `DOCKER_HUB_ACCESS_TOKEN` secrets for your actions to use. See [this guide](https://docs.docker.com/ci-cd/github-actions/) for how to generate these values.
+
+In addition to the above steps, you'll need to replace all instances of probablynot/go-module-small with <your dockerhub username>/<your module name>
